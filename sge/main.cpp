@@ -1,58 +1,19 @@
-#include <vector>
+#include "StateManager.hpp"
+#include "InitState.hpp"
 
-#include <SFML\Graphics.hpp>
-
-#include "GameObject.hpp"
-
-using namespace std;
+using namespace sge;
 
 int main(int argc, char* argv[])
 {
-	float x = 0.f, y = 0.f;
-	unsigned int screenw = 600, screenh = 800;
+	StateManager manager;
 
-	std::vector<sge::GameObject> objects;
+	manager.Init();
 
-	sf::RenderWindow window(sf::VideoMode(screenh, screenw), "sge window");
+	manager.PushState(new InitState(&manager));
 
-	while (window.isOpen())
-	{
-		sf::Event event;
-		sf::Keyboard::Key k;
-		while (window.pollEvent(event))
-		{
-			k = sf::Keyboard::Unknown;
-			if (event.type == sf::Event::Closed)
-				window.close();
+	manager.Run();
 
-			if (event.type == sf::Event::KeyPressed)
-				k = event.key.code;
-
-			switch (k)
-			{
-			case sf::Keyboard::Left:
-				x -= 10.f;
-				break;
-			case sf::Keyboard::Right:
-				x += 10.f;
-				break;
-			case sf::Keyboard::Down:
-				y += 10.f;
-				break;
-			case sf::Keyboard::Up:
-				y -= 10.f;
-				break;
-			case sf::Keyboard::Escape:
-				window.close();
-				break;
-			}
-		}
-		
-		window.clear();
-
-		window.display();
-
-	}
+	manager.Teardown();
 
 	return 0;
 }

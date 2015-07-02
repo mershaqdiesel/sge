@@ -9,16 +9,17 @@
 
 namespace sge
 {
-	class Car : GameObject
+	class Car : public GameObject
 	{
 	public:
-		inline Car() { _car.setRadius(10.0f); _car.setFillColor(sf::Color::Green); };
+		inline Car() {};
 		inline ~Car() {};
-		void Update(float dt, sf::Event event);
-		void Draw(sf::RenderTarget& target);
+		void Update(float dt, sf::Event e);
 
 	private:
-		sf::CircleShape _car;
+		// inherited
+		// Vector2f _pos
+		// vector<Component *> _components
 	};
 }
 

@@ -23,11 +23,5 @@ void sge::Car::Update(float dt, sf::Event event)
 		_pos._y -= 10.f;
 		break;
 	}
-	_car.setPosition(_pos._x, _pos._y);
 	std::cout << _pos._x << ", " << _pos._y << std::endl;
-}
-
-void sge::Car::Draw(sf::RenderTarget& target)
-{
-	target.draw(_car);
 }
