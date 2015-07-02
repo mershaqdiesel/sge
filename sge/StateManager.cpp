@@ -43,12 +43,7 @@ void sge::StateManager::Run()
 		dt = clock.getElapsedTime().asSeconds();
 		clock.restart();
 
-		State* currentState = nullptr;
-
-		if (_states.size() > 0)
-		{
-			currentState = _states[_states.size() - 1];
-		}
+		State* currentState = PeekState();
 
 		if (currentState)
 		{
