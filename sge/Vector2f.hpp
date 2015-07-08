@@ -10,12 +10,12 @@ namespace sge
 		friend Vector2f operator*(const Vector2f& lhs, const int a);
 
 	public:
-		inline Vector2f()	{_x = _y = 0.f;};
-		inline Vector2f(float x, float y)	{ _x = x; _y = y; };
+		inline Vector2f()	{x = y = 0.f;};
+		inline Vector2f(float newx, float newy)	{ x = newx; y = newy; };
 		inline ~Vector2f()	{};
-		inline Vector2f(const Vector2f& rhs) { _x = rhs._x; _y = rhs._y; };
+		inline Vector2f(const Vector2f& rhs) { x = rhs.x; y = rhs.y; };
 
-		float _x, _y;
+		float x, y;
 	};
 }
 

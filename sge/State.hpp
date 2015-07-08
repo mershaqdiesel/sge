@@ -1,6 +1,13 @@
 #ifndef __SGE_STATE
 #define __SGE_STATE
 
+#include <vector>
+
+#include <SFML/Window.hpp>
+
+#include "GraphicsSystem.hpp"
+#include "GameObject.hpp"
+
 namespace sge
 {
 	class StateManager;
@@ -8,12 +15,18 @@ namespace sge
 	class State
 	{
 	public:
-		virtual void HandleInput(/* probably need some sort of input state here*/) = 0;
+		virtual ~State() = 0;
+
+		virtual void HandleInput(sf::Event& e) = 0;
 		virtual void Update(float dt) = 0;
 		virtual void Draw() = 0;
 
 	protected:
 		StateManager* _manager;
+
+		GraphicsSystem _graphics;
+
+		std::vector<GameObject *> _actors;
 	};
 }
 

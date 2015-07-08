@@ -7,14 +7,19 @@
 
 namespace sge
 {
+	class GraphicsSystem;
+
 	class GraphicsComponent : public Component
 	{
 	public:
-		GraphicsComponent(sge::GameObject* obj) : Component(obj), _shape(10.0f) { _shape.setFillColor(sf::Color::Green); };
+		friend GraphicsSystem;
+
 		void Draw(sf::RenderTarget& target);
-		void Update(float dt);
 
 	private:
+		GraphicsComponent(sge::GameObject* obj) : Component(obj, std::string("GraphicsComponent")), _shape(10.0f)
+			{ _shape.setFillColor(sf::Color::Green); };
+
 		// inheirted
 		// GameObject* _object
 

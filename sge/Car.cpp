@@ -1,27 +1,31 @@
 #include "Car.hpp"
 
-void sge::Car::Update(float dt, sf::Event event)
+void sge::Car::HandleInput(sf::Event& e)
 {
 	sf::Keyboard::Key k;
 	k = sf::Keyboard::Unknown;
 	
-	if (event.type == sf::Event::KeyPressed)
-		k = event.key.code;
+	if (e.type == sf::Event::KeyPressed)
+		k = e.key.code;
 
 	switch (k)
 	{
 	case sf::Keyboard::Left:
-		_pos._x -= 10.f;
+		pos.x -= 10.f;
 		break;
 	case sf::Keyboard::Right:
-		_pos._x += 10.f;
+		pos.x += 10.f;
 		break;
 	case sf::Keyboard::Down:
-		_pos._y += 10.f;
+		pos.y += 10.f;
 		break;
 	case sf::Keyboard::Up:
-		_pos._y -= 10.f;
+		pos.y -= 10.f;
 		break;
 	}
-	std::cout << _pos._x << ", " << _pos._y << std::endl;
+	std::cout << pos.x << ", " << pos.y << std::endl;
+}
+
+void sge::Car::Update(float dt)
+{
 }

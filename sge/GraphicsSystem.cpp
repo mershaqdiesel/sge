@@ -2,7 +2,6 @@
 
 void sge::GraphicsSystem::Start()
 {
-	_window.setTitle("sge window");
 }
 
 void sge::GraphicsSystem::Stop()
@@ -12,12 +11,12 @@ void sge::GraphicsSystem::Stop()
 
 void sge::GraphicsSystem::Update(float dt)
 {
-	_window.clear();
+}
 
-	for (auto comp : _drawableComps)
+void sge::GraphicsSystem::Draw(sf::RenderTarget& t)
+{
+	for (int i = 0; i < _drawableComps.size(); ++i)
 	{
-		comp->Draw(_window);
+		_drawableComps[i].Draw(t);
 	}
-
-	_window.display();
 }

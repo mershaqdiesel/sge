@@ -1,7 +1,10 @@
 #ifndef __SGE_GRAPHICSSYSTEM
 #define __SGE_GRAPHICSSYSTEM
 
+#include <string>
 #include <vector>
+
+#include <SFML/Graphics.hpp>
 
 #include "System.hpp"
 #include "GraphicsComponent.hpp"
@@ -13,15 +16,16 @@ namespace sge
 	public:
 		GraphicsSystem() { };
 
-		void Add(sge::GraphicsComponent& comp) { _drawableComps.push_back(&comp); }
 		void Start();
 		void Update(float dt);
 		void Stop();
 
-	private:
-		std::vector<sge::GraphicsComponent *> _drawableComps;
+		void Draw(sf::RenderTarget& t);
 
-		sf::RenderWindow _window;
+		GraphicsComponent& CreateComponent(std::string& type);
+
+	private:
+		std::vector<GraphicsComponent> _drawableComps;
 	};
 }
 

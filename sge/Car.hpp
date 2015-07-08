@@ -14,7 +14,10 @@ namespace sge
 	public:
 		inline Car() {};
 		inline ~Car() {};
-		void Update(float dt, sf::Event e);
+
+		void HandleInput(sf::Event& e);
+		void Update(float dt);
+		void Draw(sf::RenderTarget& t);
 
 	private:
 		// inherited

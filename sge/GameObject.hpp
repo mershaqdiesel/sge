@@ -1,6 +1,7 @@
 #ifndef __SGE_GAMEOBJECT
 #define __SGE_GAMEOBJECT
 
+#include <string>
 #include <vector>
 
 #include <SFML\Graphics.hpp>
@@ -14,13 +15,13 @@ namespace sge
 	class GameObject
 	{
 	public:
-		virtual void Update(float dt, sf::Event e) {};
-		virtual void Add(const Component& comp) { _components.push_back(const_cast<Component *>(&comp)); };
+		virtual bool AddComponent(Component* comp);
+		virtual Component* GetComponent(std::string typeName);
 
-		Vector2f _pos;
+		Vector2f pos;
 
 	protected:
-		std::vector<sge::Component *> _components;
+		std::vector<Component*> _components;
 	};
 }
 

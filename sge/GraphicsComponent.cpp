@@ -3,10 +3,6 @@
 
 void sge::GraphicsComponent::Draw(sf::RenderTarget& target)
 {
+	_shape.setPosition(_parent->pos.x, _parent->pos.y);
 	target.draw(_shape);
-}
-
-void sge::GraphicsComponent::Update(float dt)
-{
-	this->_shape.setPosition(this->_parent->_pos._x, this->_parent->_pos._y);
 }

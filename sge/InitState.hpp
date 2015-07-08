@@ -9,10 +9,16 @@ namespace sge
 	{
 	public:
 		InitState(StateManager* m);
+		~InitState();
 
-		void HandleInput();
+		void HandleInput(sf::Event& e);
 		void Update(float dt);
 		void Draw();
+
+	private:
+		// inheirited
+		// _manager
+		// _actors
 	};
 }
 

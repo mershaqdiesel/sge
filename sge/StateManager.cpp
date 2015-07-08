@@ -47,8 +47,14 @@ void sge::StateManager::Run()
 
 		if (currentState)
 		{
-			currentState->HandleInput();
+			sf::Event e;
+			while (window->pollEvent(e))
+			{
+				currentState->HandleInput(e);
+			}
+
 			currentState->Update(dt);
+
 			window->clear(sf::Color::Black);
 			currentState->Draw();
 			window->display();
