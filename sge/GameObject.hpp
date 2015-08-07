@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 #include "Vector2f.hpp"
 

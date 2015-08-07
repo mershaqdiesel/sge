@@ -1,7 +1,7 @@
 #ifndef __SGE_GRAPHICSCOMPONENT
 #define __SGE_GRAPHICSCOMPONENT
 
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 #include "Component.hpp"
 
