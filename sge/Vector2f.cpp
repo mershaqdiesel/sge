@@ -1,16 +1,22 @@
 #include "Vector2f.hpp"
 
-inline sge::Vector2f sge::operator+(const sge::Vector2f& lhs, const sge::Vector2f& rhs)
+namespace sge
 {
-	return sge::Vector2f(lhs.x + rhs.x, lhs.y + rhs.y);
-}
-
-inline sge::Vector2f sge::operator*(const int a, const sge::Vector2f& rhs)
-{
-	return sge::Vector2f(rhs.x * a, rhs.y *a);
-}
-
-inline sge::Vector2f sge::operator*(const sge::Vector2f& lhs, const int a)
-{
-	return sge::Vector2f(lhs.x * a, lhs.y *a);
+    Vector2f operator+(const Vector2f& lhs, const Vector2f& rhs)
+    {
+        Vector2f v(lhs.x + rhs.x, lhs.y + rhs.y);
+    	return v;
+    }
+   
+    Vector2f operator*(const float a, const Vector2f& rhs)
+    {
+        Vector2f v(rhs.x * a, rhs.y *a);
+    	return v;
+    }
+    
+    Vector2f operator*(const Vector2f& lhs, const float a)
+    {
+        Vector2f v(lhs.x * a, lhs.y *a);
+    	return v; 
+    }
 }
