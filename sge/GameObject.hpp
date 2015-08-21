@@ -16,7 +16,7 @@ namespace sge
 	{
 	public:
 		virtual bool AddComponent(Component* comp);
-		virtual Component* GetComponent(std::string typeName);
+		virtual Component* GetComponent(const std::string& typeName);
 
 		Vector2f pos;
 

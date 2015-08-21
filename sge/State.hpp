@@ -15,7 +15,7 @@ namespace sge
 	class State
 	{
 	public:
-		virtual ~State() = 0;
+		virtual ~State() {};
 
 		virtual void HandleInput(sf::Event& e) = 0;
 		virtual void Update(float dt) = 0;

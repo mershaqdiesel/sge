@@ -9,7 +9,7 @@ namespace sge
 	{
 	public:
 		InitState(StateManager* m);
-		~InitState();
+		~InitState() {};
 
 		void HandleInput(sf::Event& e);
 		void Update(float dt);

@@ -10,8 +10,9 @@ sge::InitState::InitState(sge::StateManager* m)
 {
 	_manager = m;
 	Car * c = new Car;
-	GraphicsComponent& gcomp = _graphics.CreateComponent(std::string("CircleComp"));
-	c->AddComponent(&gcomp);
+    //std::string n = "CircleComp";
+	//GraphicsComponent gcomp = _graphics.CreateComponent(n);
+	//c->AddComponent(&gcomp);
 	_actors.push_back(c);
 }
 

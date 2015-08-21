@@ -15,7 +15,7 @@ void sge::GraphicsSystem::Update(float dt)
 
 void sge::GraphicsSystem::Draw(sf::RenderTarget& t)
 {
-	for (int i = 0; i < _drawableComps.size(); ++i)
+	for (size_t i = 0; i < _drawableComps.size(); ++i)
 	{
 		_drawableComps[i].Draw(t);
 	}

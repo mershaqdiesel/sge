@@ -22,7 +22,7 @@ namespace sge
 
 		void Draw(sf::RenderTarget& t);
 
-		GraphicsComponent& CreateComponent(std::string& type);
+		//GraphicsComponent& CreateComponent(std::string& type);
 
 	private:
 		std::vector<GraphicsComponent> _drawableComps;

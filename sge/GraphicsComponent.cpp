@@ -1,5 +1,13 @@
 #include "GraphicsComponent.hpp"
-#include "GameObject.hpp"
+
+sge::GraphicsComponent::GraphicsComponent(sge::GameObject* o) : 
+    Component(o),
+    _shape(10.0f)
+{
+    SetName("GraphicsComponent");
+    _shape.setFillColor(sf::Color::Green);
+}
+
 
 void sge::GraphicsComponent::Draw(sf::RenderTarget& target)
 {

@@ -1,7 +1,7 @@
 #include "StateManager.hpp"
 #include "State.hpp"
 
-sge::StateManager::StateManager() : _screenh(600), _screenw(800)
+sge::StateManager::StateManager() :  _screenw(800), _screenh(600)
 {
 	window = new sf::RenderWindow();
 }

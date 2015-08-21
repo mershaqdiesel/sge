@@ -10,15 +10,18 @@ namespace sge
 	class Component
 	{
 	public:
-		Component(GameObject* obj, std::string& name) { _parent = obj; Name = name; };
+		Component(GameObject* obj) { _parent = obj; };
 		virtual ~Component() {};
 
 		virtual void Update(float dt) {};
 
-		static std::string& Name;
+        virtual const std::string& GetName() { return _name; };
 
 	protected:
 		GameObject* _parent;
+        std::string _name;
+
+        virtual void SetName(const std::string& n) { _name = n; };
 	};
 }
 

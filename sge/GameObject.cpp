@@ -3,7 +3,7 @@
 
 bool sge::GameObject::AddComponent(Component* comp)
 {
-	Component* c = GetComponent(comp->Name);
+	Component* c = GetComponent(comp->GetName());
 	if (c == nullptr)
 	{
 		_components.push_back(comp);
@@ -12,12 +12,12 @@ bool sge::GameObject::AddComponent(Component* comp)
 	return false;
 }
 
-sge::Component* sge::GameObject::GetComponent(std::string typeName)
+sge::Component* sge::GameObject::GetComponent(const std::string& typeName)
 {
 	Component* c = nullptr;
-	for (int i = 0; i < _components.size(); ++i)
+	for (size_t i = 0; i < _components.size(); ++i)
 	{
-		if (_components[i]->Name == typeName)
+		if (_components[i]->GetName() == typeName)
 		{
 			c = _components[i];
 		}
