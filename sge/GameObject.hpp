@@ -15,8 +15,13 @@ namespace sge
 	class GameObject
 	{
 	public:
-		virtual bool AddComponent(Component* comp);
-		virtual Component* GetComponent(const std::string& typeName);
+	    GameObject() {};
+	    virtual ~GameObject() {};
+	    
+	    virtual void HandleInput(sf::Event& e) {};
+	    
+		bool AddComponent(Component* comp);
+		Component* GetComponent(const std::string& typeName);
 
 		Vector2f pos;
 

@@ -1,7 +1,16 @@
 #ifndef __SGE_INITSTATE
 #define __SGE_INITSTATE
+    
+#include <memory>
+#include <string>
 
 #include "State.hpp"
+#include "InitState.hpp"
+#include "StateManager.hpp"
+
+#include "Car.hpp"
+#include "GraphicsComponent.hpp"
+
 
 namespace sge
 {

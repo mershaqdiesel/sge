@@ -22,10 +22,8 @@ void sge::Car::HandleInput(sf::Event& e)
 	case sf::Keyboard::Up:
 		pos.y -= 10.f;
 		break;
+	default:
+	    break;
 	}
 	std::cout << pos.x << ", " << pos.y << std::endl;
-}
-
-void sge::Car::Update(float dt)
-{
 }

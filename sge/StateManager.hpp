@@ -1,6 +1,7 @@
 #ifndef __SGE_STATEMANAGER
 #define __SGE_STATEMANAGER
 
+#include <iostream>
 #include <vector>
 
 #include <SFML/Graphics.hpp>

@@ -1,23 +1,21 @@
-#include <string>
-
 #include "InitState.hpp"
-#include "StateManager.hpp"
-
-#include "Car.hpp"
-#include "GraphicsComponent.hpp"
 
 sge::InitState::InitState(sge::StateManager* m)
 {
 	_manager = m;
 	Car * c = new Car;
-    //std::string n = "CircleComp";
-	//GraphicsComponent gcomp = _graphics.CreateComponent(n);
-	//c->AddComponent(&gcomp);
+	std::string n = "GraphicsComponent";
+	GraphicsComponent* gcomp = _graphics.CreateComponent(n, c);
+	c->AddComponent(gcomp);
 	_actors.push_back(c);
 }
 
 void sge::InitState::HandleInput(sf::Event& e)
 {
+    for (auto a : _actors)
+    {
+        a->HandleInput(e);
+    }
 }
 
 void sge::InitState::Update(float dt)

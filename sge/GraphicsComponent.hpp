@@ -10,15 +10,18 @@
 
 namespace sge
 {
+    class GraphicsSystem;
+    
 	class GraphicsComponent : public Component
 	{
 	public:
+	    friend GraphicsSystem;
+	    
 		void Draw(sf::RenderTarget& target);
         const std::string& GetName() { return Component::GetName(); };
 
 	private:
 		GraphicsComponent(GameObject* o);
-        void SetName(const std::string& n) { Component::SetName(n); };
 
 		// inheirted
 		// GameObject* _object

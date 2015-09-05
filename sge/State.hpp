@@ -1,6 +1,7 @@
 #ifndef __SGE_STATE
 #define __SGE_STATE
 
+#include <memory>
 #include <vector>
 
 #include <SFML/Window.hpp>

@@ -1,10 +1,9 @@
 #include "GraphicsComponent.hpp"
 
 sge::GraphicsComponent::GraphicsComponent(sge::GameObject* o) : 
-    Component(o),
+    Component("GraphicsComponent", o),
     _shape(10.0f)
 {
-    SetName("GraphicsComponent");
     _shape.setFillColor(sf::Color::Green);
 }
 

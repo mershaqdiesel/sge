@@ -22,10 +22,10 @@ namespace sge
 
 		void Draw(sf::RenderTarget& t);
 
-		//GraphicsComponent& CreateComponent(std::string& type);
+		GraphicsComponent* CreateComponent(const std::string& type, const GameObject* obj);
 
 	private:
-		std::vector<GraphicsComponent> _drawableComps;
+		std::vector<GraphicsComponent*> _drawableComps;
 	};
 }
 

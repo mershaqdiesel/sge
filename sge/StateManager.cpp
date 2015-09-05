@@ -41,6 +41,7 @@ void sge::StateManager::Run()
 	while (window->isOpen())
 	{
 		dt = clock.getElapsedTime().asSeconds();
+        //std::cout << "Time elapsed: " << dt << std::endl;
 		clock.restart();
 
 		State* currentState = PeekState();
@@ -50,6 +51,11 @@ void sge::StateManager::Run()
 			sf::Event e;
 			while (window->pollEvent(e))
 			{
+                if (e.type == sf::Event::Closed)
+                {
+                    window->close();
+                }
+
 				currentState->HandleInput(e);
 			}
 

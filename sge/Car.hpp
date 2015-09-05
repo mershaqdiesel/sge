@@ -12,12 +12,10 @@ namespace sge
 	class Car : public GameObject
 	{
 	public:
-		inline Car() {};
-		inline ~Car() {};
+		Car() {};
+		~Car() {};
 
 		void HandleInput(sf::Event& e);
-		void Update(float dt);
-		void Draw(sf::RenderTarget& t);
 
 	private:
 		// inherited
