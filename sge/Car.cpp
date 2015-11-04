@@ -8,22 +8,25 @@ void sge::Car::HandleInput(sf::Event& e)
 	if (e.type == sf::Event::KeyPressed)
 		k = e.key.code;
 
+	float x = 0.f, y = 0.f;
+
 	switch (k)
 	{
 	case sf::Keyboard::Left:
-		pos.x -= 10.f;
+		x = -10.f;
 		break;
 	case sf::Keyboard::Right:
-		pos.x += 10.f;
+		x = 10.f;
 		break;
 	case sf::Keyboard::Down:
-		pos.y += 10.f;
+		y = 10.f;
 		break;
 	case sf::Keyboard::Up:
-		pos.y -= 10.f;
+		y = -10.f;
 		break;
 	default:
 	    break;
 	}
-	std::cout << pos.x << ", " << pos.y << std::endl;
+	_trans.move(x, y);
+	//std::cout << pos.x << ", " << pos.y << std::endl;
 }

@@ -6,8 +6,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Vector2f.hpp"
-
 namespace sge
 {
 	class Component;
@@ -23,10 +21,11 @@ namespace sge
 		bool AddComponent(Component* comp);
 		Component* GetComponent(const std::string& typeName);
 
-		Vector2f pos;
+		sf::Transformable& GetTransform();
 
 	protected:
 		std::vector<Component*> _components;
+		sf::Transformable _trans;
 	};
 }
 

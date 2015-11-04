@@ -26,6 +26,7 @@ namespace sge
 		StateManager* _manager;
 
 		GraphicsSystem _graphics;
+		sf::View *_camera;
 
 		std::vector<GameObject *> _actors;
 	};

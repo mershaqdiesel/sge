@@ -24,3 +24,8 @@ sge::Component* sge::GameObject::GetComponent(const std::string& typeName)
 	}
 	return c;
 }
+
+sf::Transformable& sge::GameObject::GetTransform()
+{
+	return _trans;
+}

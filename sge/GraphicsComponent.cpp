@@ -10,6 +10,9 @@ sge::GraphicsComponent::GraphicsComponent(sge::GameObject* o) :
 
 void sge::GraphicsComponent::Draw(sf::RenderTarget& target)
 {
-	_shape.setPosition(_parent->pos.x, _parent->pos.y);
+	sf::Transformable t = _parent->GetTransform();
+	_shape.setPosition(t.getPosition());
+	_shape.setRotation(t.getRotation());
+	_shape.setScale(t.getScale());
 	target.draw(_shape);
 }
