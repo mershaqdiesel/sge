@@ -18,9 +18,6 @@ namespace sge
 		void HandleInput(sf::Event& e);
 
 	private:
-		// inherited
-		// Vector2f _pos
-		// vector<Component *> _components
 	};
 }
 

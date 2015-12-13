@@ -1,5 +1,4 @@
 #include "StateManager.hpp"
-#include "State.hpp"
 
 sge::StateManager::StateManager() :  _screenw(800), _screenh(600)
 {
@@ -37,11 +36,13 @@ void sge::StateManager::Run()
 	sf::Clock clock;
 	clock.restart();
 	float dt = 0.f;
+	float cumulativeT = 0.f;
 
 	while (window->isOpen())
 	{
 		dt = clock.getElapsedTime().asSeconds();
-        //std::cout << "Time elapsed: " << dt << std::endl;
+		cumulativeT += dt;
+        //std::cout << "Time elapsed: " << dt << "\t" << cumulativeT << std::endl;
 		clock.restart();
 
 		State* currentState = PeekState();
@@ -57,6 +58,12 @@ void sge::StateManager::Run()
                 }
 
 				currentState->HandleInput(e);
+			}
+
+			if (cumulativeT >= .2f)
+			{
+				currentState->FixedUpdate(cumulativeT);
+				cumulativeT = 0.f;
 			}
 
 			currentState->Update(dt);

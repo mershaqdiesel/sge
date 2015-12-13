@@ -7,6 +7,8 @@
 #include <SFML/Window.hpp>
 
 #include "GraphicsSystem.hpp"
+#include "PhysicsSystem.hpp"
+
 #include "GameObject.hpp"
 
 namespace sge
@@ -19,6 +21,7 @@ namespace sge
 		virtual ~State() {};
 
 		virtual void HandleInput(sf::Event& e) = 0;
+		virtual void FixedUpdate(float dt) = 0;
 		virtual void Update(float dt) = 0;
 		virtual void Draw() = 0;
 
@@ -26,6 +29,8 @@ namespace sge
 		StateManager* _manager;
 
 		GraphicsSystem _graphics;
+		PhysicsSystem _physics;
+
 		sf::View *_camera;
 
 		std::vector<GameObject *> _actors;

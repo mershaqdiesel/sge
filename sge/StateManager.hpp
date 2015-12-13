@@ -6,6 +6,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "State.hpp"
+
 namespace sge
 {
 	class State;

@@ -1,5 +1,4 @@
 #include "GameObject.hpp"
-#include "Component.hpp"
 
 bool sge::GameObject::AddComponent(Component* comp)
 {

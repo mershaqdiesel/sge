@@ -21,6 +21,7 @@ namespace sge
 		~InitState() {};
 
 		void HandleInput(sf::Event& e);
+		void FixedUpdate(float dt);
 		void Update(float dt);
 		void Draw();
 

@@ -6,6 +6,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Component.hpp"
+
 namespace sge
 {
 	class Component;
